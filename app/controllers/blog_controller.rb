@@ -2,12 +2,15 @@ class BlogController < ApplicationController
     def index
         @blogs = Blog.all
     end
+    
     def show
         @blog = Blog.find(params[:id])
     end
+
     def new
         @blog = Blog.new
     end
+
     def create
         @blog = Blog.create(blog_params)
         if @blog.valid?
@@ -26,6 +29,20 @@ class BlogController < ApplicationController
         end
     end
 
+    def edit
+        @blog = Blog.find(params[:id])
+    end
+
+    def update
+        @blog = Blog.find(params[:id])
+        @blog.update(blog_params)
+        if @blog.valid?
+            redirect_to blog_path(@blog)
+        else
+            redirect_to edit_blog_path
+        end
+    end
+    
     private
     # strong params:
     def blog_params

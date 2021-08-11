@@ -4,3 +4,5 @@
 <h5> <%= link_to 'Home', blogs_path %></h5>
 <h5> <%= link_to 'Delete Blog', delete_blog_path(@blog), method: :delete, data: 
 { confirm: 'Are you sure?'} %></h5>
+
+<%= link_to 'Upadte a blog', edit_blog_path(@blog) %>

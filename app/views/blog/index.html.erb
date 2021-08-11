@@ -1,9 +1,15 @@
-<h1>TY The Rabbit Blogs</h1>
-<ul>
-    <% @blogs.each do |blog| %>
-        <li><%= link_to blog.title, blog_path(blog) %></li>
-<% end %>
-</ul>
+<div class = 'header'>
+    <h1>TY The Rabbit Blogs</h1>
+    <h3 class='subtitle'>Welcome to Rabbit Blogs, where you can find the most update about our furry little friends!!</h3>
+</div>
+<div>
+    <h3 class= 'list-header'>Current List of Blogs:</h3>
+    <ul>
+        <% @blogs.each do |blog| %>
+            <li><%= link_to blog.title, blog_path(blog) %></li>
+    <% end %>
+    </ul>
+</div>
 <br>
 <%= link_to 'Submit a new blog', new_blog_path %>
 
